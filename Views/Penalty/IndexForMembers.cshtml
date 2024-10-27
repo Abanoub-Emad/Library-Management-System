@@ -1,0 +1,32 @@
+﻿@model List<PenaltyViewMode>
+@{
+    ViewData["Title"] = "IndexForMembers";
+    int count = 1;
+}
+
+<h1>IndexForMembers</h1>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Count</th>
+        <th>Title</th>
+        <th>Full Name</th>
+        <th>Due Date</th>
+        <th>Return Date</th>
+        <th>Total Delay Days</th>
+        <th>Total Penalty Amount</th>
+        <th>Paid</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@(count++)</td>
+            <td>@item.Title</td>
+            <td>@item.FullName</td>
+            <td>@item.Due_Date</td>
+            <td>@item.Return_Date</td>
+            <td>@item.TotalDelayDays</td>
+            <td>@item.TotalPenaltyAmount</td>
+            <td>@item.Is_Paid</td>
+        </tr>
+    }
+</table>
